@@ -1,4 +1,4 @@
-from . import version
+from wapttools.version import latest
 
 def commands(downloader=None):
     """ Default command
