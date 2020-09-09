@@ -7,7 +7,7 @@ setup(
     author='Ludovic ROBINOT',
     author_email='lrobinot@gmail.com',
     packages=['wapttools'],
-    install_requires=['bs4', 'requests'],
+    install_requires=['beautifulsoup4', 'requests'],
     version='0.1',
     license='Apache 2.0',
     description='WAPT modules to ease version upgrades.',
