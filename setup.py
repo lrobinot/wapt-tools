@@ -2,13 +2,13 @@ from setuptools import setup
 
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
-    name='WAPT Tools',
+    name='wapt_tools',
     url='https://github.com/lrobinot/wapt-tools',
     author='Ludovic ROBINOT',
     author_email='lrobinot@gmail.com',
-    packages=['wapttools'],
+    packages=setuptools.find_packages(),
     install_requires=['beautifulsoup4', 'requests'],
-    version='0.2',
+    version='0.3',
     license='Apache 2.0',
     description='WAPT modules to ease version upgrades.',
 )
