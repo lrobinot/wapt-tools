@@ -1,0 +1,7 @@
+{
+  "todohighlight.include": ["*.*"],
+  "editor.rulers": [
+    120
+  ],
+  "python.pythonPath": "/usr/bin/python"
+}
