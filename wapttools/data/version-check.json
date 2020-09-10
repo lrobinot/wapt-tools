@@ -1,0 +1,13 @@
+{
+  "url_version": "https://.../version-history",
+  "html": true,
+  "selector": "h6:nth-of-type(1)",
+  "cleaners": [
+    {
+      "pattern": "v([0-9.]*).*",
+      "rewrite": "\\1"
+    }
+  ],
+  "url_downloads": "https://.../builds",
+  "url_download_file": "https://download.../template_{version}.exe"
+}
