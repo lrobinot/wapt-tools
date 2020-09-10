@@ -31,5 +31,7 @@ def loadControl():
                 config['name'] = line.split(':')[1].strip()
             if line.startswith('version'):
                 config['version'] = line.split(':')[1].split('-')[0].strip()
+            if line.startswith('homepage'):
+                config['homepage'] = line.split(':')[1].strip()
 
     return config

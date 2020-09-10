@@ -1,7 +1,19 @@
 import bs4
+import json
 import re
 import requests
+import os
 from .config import loadControl, loadVersionCheck
+
+chat_message = '''
+New version of *{package}* have beed detected.
+
+Control version: {old_version}
+ Latest version: *{new_version}*
+
+Jump to {homepage}
+'''
+
 
 def latestVersion():
     """ Extract latest version defined by version-check.json
@@ -27,7 +39,7 @@ def latestVersion():
 
     return latest_version
 
-def versionChecker(verbose=False):
+def versionChecker(verbose=False, chat=False):
     """ Compare latest version defined by version-check.json, versus WAPT/control one
 
     Returns
@@ -46,6 +58,19 @@ def versionChecker(verbose=False):
     if control['version'] != latest_version:
         if verbose:
             print('New version available, please upgrade package')
+
+        if chat and 'CHAT_WEBHOOK_URL' in os.environ:
+            requests.session().post(
+                os.environ['CHAT_WEBHOOK_URL'],
+                data=json.dumps({
+                    'text': chat_message.format(
+                        package=control['name'],
+                        old_version=control['version'],
+                        new_version=latest_version,
+                        homepage=control['homepage'])
+                }),
+                headers={'Content-Type': 'application/json; charset=UTF-8'}
+            )
 
         return True
 
