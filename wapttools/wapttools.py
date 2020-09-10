@@ -13,7 +13,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--verbose', help='increase output verbosity', action='store_true')
     parser.add_argument('--version', help='display module version', action='store_true')
-    parser.add_argument('--check', help='use local version-check.json & WAPT/control to do a version check', action='store_true')
+    parser.add_argument('--check', help='use local version-check.json & WAPT/control to do a version check',
+        action='store_true')
     parser.add_argument('--chat', help='send results to chat', action='store_true')
     parser.add_argument('--create', help='create a new package', type=str)
     parser.add_argument('--release', help='release a package to production', type=str)

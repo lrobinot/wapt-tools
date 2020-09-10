@@ -1,12 +1,11 @@
-import re
 import os
 import sys
-import shutil
 import gitlab
 import random
 from pkg_resources import resource_string
 
 badge = '[![{text} status]({url}/wapt/packages/{package}/badges/{branch}/pipeline.svg?key_text={text})]({url}/wapt/packages/{package}/-/pipelines?&ref={branch})\n'
+
 
 def creator(package, verbose=False):
     gl = gitlab.Gitlab.from_config()

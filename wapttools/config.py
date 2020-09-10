@@ -1,6 +1,7 @@
 import json
 import os
 
+
 def loadVersionCheck():
     """ Load version-check.json configuration file
 
@@ -13,6 +14,7 @@ def loadVersionCheck():
         config = json.load(file)
 
     return config
+
 
 def loadControl():
     """ Load WAPT/control configuration file
