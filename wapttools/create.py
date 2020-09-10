@@ -69,7 +69,7 @@ def creator(package, verbose=False):
 
     os.mkdir('WAPT')
     with open(os.path.join('WAPT', 'control'), 'w') as file:
-        file.write(resource_string('wapttools.data', 'wapt_control').format(url=gl.url, package=package_name))
+        file.write(resource_string('wapttools.data', 'wapt_control.txt').format(url=gl.url, package=package_name))
 
     os.mkdir('config')
     open(os.path.join('config', '.gitkeep'), 'a').close()

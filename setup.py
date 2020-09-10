@@ -12,5 +12,5 @@ setup(
     license='Apache 2.0',
     description='WAPT modules to ease version upgrades.',
     include_package_data=True,
-    package_data={'': ['data/*.tmpl']},
+    package_data={'': ['data/*.*']},
 )
