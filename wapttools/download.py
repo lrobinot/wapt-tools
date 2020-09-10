@@ -1,7 +1,5 @@
-import bs4
-import json
+import glob
 import os
-import re
 import requests
 
 def download(url, pathname, clean=True):
