@@ -29,7 +29,11 @@ def latestVersion():
 
     if config['html'] is True:
         soup = bs4.BeautifulSoup(content, 'html.parser')
-        latest_version = soup.select(config['selector'])[0].contents[0].strip()
+        if index in config:
+            index = config['index']
+        else:
+            index = 0
+        latest_version = soup.select(config['selector'])[index].contents[0].strip()
     else:
         latest_version = content
 
