@@ -1,6 +1,6 @@
 import sys
 from .config import loadVersionCheck, loadControl
-from .version import checker
+from .version import versionChecker
 
 def commands(downloader=None):
     """ Default main function fo
@@ -10,4 +10,4 @@ def commands(downloader=None):
             downloader()
     else:
         if sys.argv[1] == 'version-check':
-            checker(verbose=True)
+            versionChecker(verbose=True)

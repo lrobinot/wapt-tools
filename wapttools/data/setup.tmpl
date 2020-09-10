@@ -1,0 +1,85 @@
+import setuphelpers as wapt
+import wapttools
+import bs4
+import glob
+import re
+import requests
+import os
+import sys
+import json
+
+uninstallkey = []
+
+# Declaring specific app values
+bin_name_string = 'template_%s.exe'
+silent_inst_arg = '/S'
+uninstall_key = 'Template'
+app_path = wapt.makepath(wapt.programfiles, 'Template')
+conf_file_path = wapt.makepath(app_path, 'template.ini')
+
+
+def install():
+    # put here what to do when package is removed from host
+    # implicit context variables are WAPT, control, user, params, run, force
+    global WAPT, control, user, params, run, force
+
+    pass
+
+
+def uninstall():
+    # put here what to do when package is removed from host
+    # implicit context variables are WAPT, control, user, params, run
+    global WAPT, control, user, params, run
+
+    pass
+
+
+def session_setup():
+    # put here what to do when package is configured inside a user session
+    # implicit context variables are WAPT, control, user, params
+    global WAPT, control, user, params
+
+    print('Session setup for %s' % control.asrequirement())
+
+
+def audit():
+    # put here code to check periodically that state is matching expectations
+    # return 'OK', 'WARNING' or 'ERROR' to report status in console.
+    # all print statement are reported too
+    return 'OK'
+
+
+def update_package():
+    # put here what to do to update package content with newer installers.
+    # launched with command wapt-get update-package-sources <path-to-wapt-directory>
+    # implicit context variables are WAPT, basedir, control, user, params, run
+    # if attributes in control are changed, they should be explicitly saved to package file with
+    # control.save_control_to_wapt()
+    global WAPT, basedir, control, user, params, run
+
+    latest_version = wapttools.latestVersion()
+    print('Latest version: {version}'.format(version=latest_version))
+
+    current_version = control.version.split('-')[0]
+
+    if latest_version != current_version:
+        print('Upgrading from {current_version} to {latest_version}'.format(
+            current_version=current_version,
+            latest_version=latest_version))
+        control.version = '%s-0' % latest_version
+        control.save_control_to_wapt('.')
+
+    download_sources()
+
+
+def download_sources():
+    pkg = wapt.PackageEntry().load_control_from_wapt('.')
+    current_version = pkg.version.split('-')[0]
+    filename = wapt.makepath('sources', bin_name_string % current_version)
+
+    config = loadVersionCheck()
+    geovar_download(config['url_download_file'].format(version=current_version), filename)
+
+
+if __name__ == '__main__':
+    wapttools.commands(downloader=download_sources)

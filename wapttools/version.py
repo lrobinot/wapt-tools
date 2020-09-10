@@ -3,7 +3,7 @@ import re
 import requests
 from .config import loadControl, loadVersionCheck
 
-def latest():
+def latestVersion():
     """ Extract latest version defined by version-check.json
 
     Returns
@@ -27,7 +27,7 @@ def latest():
 
     return latest_version
 
-def checker(verbose=False):
+def versionChecker(verbose=False):
     """ Compare latest version defined by version-check.json, versus WAPT/control one
 
     Returns
@@ -39,9 +39,9 @@ def checker(verbose=False):
     if verbose:
         print('Current {} version: {}'.format(control['name'], control['version']))
 
-    latest_version = latest()
+    latest_version = latestVersion()
     if verbose:
-        print(' Latest {} version: {}'.format(latest_version))
+        print(' Latest {} version: {}'.format(control['name'], latest_version))
 
     if control['version'] != latest_version:
         if verbose:
