@@ -246,19 +246,17 @@ def creator(package, verbose=False):
     if len(projects) > 0:
         for project in projects:
             if project.name == package_name:
-                gl.projects.delete(project.id) # TODO: to be removed when published
-                # if verbose:
-                #     print('*** ERROR: project {} already exists, aborting.'.format(package_name))
-                # sys.exit(1)
+                if verbose:
+                    print('*** ERROR: project {} already exists, aborting.'.format(package_name))
+                sys.exit(1)
 
     if os.path.isdir(package_folder):
         os.makedirs(package_folder)
 
     if os.path.isdir(package):
-        shutil.rmtree(package) # TODO: to be removed when published
-        # if verbose:
-        #     print('*** ERROR: folder {} already exists, aborting.'.format(package))
-        # sys.exit(1)
+        if verbose:
+            print('*** ERROR: folder {} already exists, aborting.'.format(package))
+        sys.exit(1)
 
     wapt_group = gl.groups.list(search='wapt')[0]
     packages_group = wapt_group.subgroups.list(search='packages')[0]
