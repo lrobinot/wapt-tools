@@ -8,9 +8,9 @@ setup(
     author_email='lrobinot@gmail.com',
     packages=find_packages(),
     install_requires=['beautifulsoup4', 'requests'],
-    version='1.1.1',
+    version='1.2.0',
     license='Apache 2.0',
-    description='WAPT modules to ease version upgrades.',
+    description='WAPT package utilities.',
     include_package_data=True,
     package_data={'': ['data/*.*']},
 )
