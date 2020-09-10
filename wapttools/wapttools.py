@@ -6,7 +6,7 @@ from .release import release
 
 """wapttools.wapttools: provides entry point main()."""
 
-__version__ = "0.3.6"
+__version__ = "1.0.0"
 
 
 def main():
