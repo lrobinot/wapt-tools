@@ -31,12 +31,13 @@ def release(package, verbose):
 
     os.system(command)
 
-    command = ('git flow release finish ' + \
-        '--push --pushtag --nopushdevelop --nokeep --force_delete ' + \
-        '--message "Release v{version} on {date}" v{tag}').format(
-            tag=version_tag,
-            version=control['version'],
-            date=datetime.datetime.now().strftime('%Y-%m-%d, %H:%M'))
+    command = 'git flow release finish '
+    command += '--push --pushtag --nopushdevelop --nokeep --force_delete '
+    command += '--message "Release v{version} on {date}" v{tag}'
+    command = command.format(
+        tag=version_tag,
+        version=control['version'],
+        date=datetime.datetime.now().strftime('%Y-%m-%d, %H:%M'))
     if verbose:
         print('* {}'.format(command))
 

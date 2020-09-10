@@ -4,13 +4,13 @@ import gitlab
 import random
 from pkg_resources import resource_string
 
-badge = '[![{text} status]({url}/wapt/packages/{package}/badges/{branch}/pipeline.svg?key_text={text})]({url}/wapt/packages/{package}/-/pipelines?&ref={branch})\n'
+badge = '[![{text} status]({url}/wapt/packages/{package}/badges/{branch}/pipeline.svg?key_text={text})]({url}/wapt/packages/{package}/-/pipelines?&ref={branch})\n' # noqa
 
 
 def creator(package, verbose=False):
     gl = gitlab.Gitlab.from_config()
     if verbose:
-        print("Gitlab url: {}".format(gl.url))
+        print('Gitlab url: {}'.format(gl.url))
 
     package_name = os.path.basename(package)
     package_folder = os.path.dirname(package)
@@ -40,7 +40,7 @@ def creator(package, verbose=False):
         os.chdir(package_folder)
     command = 'git clone {}:wapt/packages/{}'.format(gl.url.replace('https://', 'git@'), package_name)
     if verbose:
-        print("* {}".format(command))
+        print('* {}'.format(command))
     os.system(command)
     os.chdir(package_name)
 

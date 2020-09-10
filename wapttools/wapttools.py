@@ -6,14 +6,16 @@ from .release import release
 
 """wapttools.wapttools: provides entry point main()."""
 
-__version__ = "1.0.0"
+__version__ = '1.0.0'
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--verbose', help='increase output verbosity', action='store_true')
     parser.add_argument('--version', help='display module version', action='store_true')
-    parser.add_argument('--check', help='use local version-check.json & WAPT/control to do a version check',
+    parser.add_argument(
+        '--check',
+        help='use local version-check.json & WAPT/control to do a version check',
         action='store_true')
     parser.add_argument('--chat', help='send results to chat', action='store_true')
     parser.add_argument('--create', help='create a new package', type=str)

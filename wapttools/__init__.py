@@ -1,5 +1,4 @@
-from .config import *
-from .commands import *
-from .download import *
-from .version import *
-
+from .config import * # noqa
+from .commands import * # noqa
+from .download import * # noqa
+from .version import * # noqa

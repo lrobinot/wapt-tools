@@ -5,14 +5,14 @@ import requests
 import os
 from .config import loadControl, loadVersionCheck
 
-chat_message = '''
+chat_message = """
 New version of *{package}* have beed detected.
 
 Control version: {old_version}
  Latest version: *{new_version}*
 
 Jump to {homepage}
-'''
+"""
 
 
 def latestVersion():
@@ -42,6 +42,7 @@ def latestVersion():
             latest_version = re.sub(cleaner['pattern'], cleaner['rewrite'], latest_version, flags=re.DOTALL).strip()
 
     return latest_version
+
 
 def versionChecker(verbose=False, chat=False):
     """ Compare latest version defined by version-check.json, versus WAPT/control one
