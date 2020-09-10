@@ -8,7 +8,7 @@ setup(
     author_email='lrobinot@gmail.com',
     packages=find_packages(),
     install_requires=['beautifulsoup4', 'requests'],
-    version='0.4',
+    version='0.5',
     license='Apache 2.0',
     description='WAPT modules to ease version upgrades.',
 )
