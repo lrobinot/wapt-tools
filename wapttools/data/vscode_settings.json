@@ -1,0 +1,12 @@
+{
+  "python.wapt-get": "${config:python.pythonPath}/../wapt-get.py",
+  "python.pythonPath": "C:\\Program Files (x86)\\wapt\\waptpython.exe",
+  "python.linting.enabled": false,
+  "python.linting.flake8Enabled": false,
+  "editor.rulers": [
+    120
+  ],
+  "todohighlight.include": [
+    "*.*"
+  ]
+}

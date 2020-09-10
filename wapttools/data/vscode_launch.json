@@ -1,0 +1,138 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "WAPT: install",
+      "type": "python",
+      "request": "launch",
+      "program": "${config:python.wapt-get}",
+      "args": [
+        "install",
+        "${workspaceFolder}"
+      ],
+      "console": "integratedTerminal",
+      "linux": {
+        "sudo": true
+      },
+      "osx": {
+        "sudo": true
+      }
+    },
+    {
+      "name": "WAPT: remove",
+      "type": "python",
+      "request": "launch",
+      "program": "${config:python.wapt-get}",
+      "args": [
+        "remove",
+        "${workspaceFolder}"
+      ],
+      "console": "integratedTerminal",
+      "linux": {
+        "sudo": true
+      },
+      "osx": {
+        "sudo": true
+      }
+    },
+    {
+      "name": "WAPT: session-setup",
+      "type": "python",
+      "request": "launch",
+      "program": "${config:python.wapt-get}",
+      "args": [
+        "session-setup",
+        "${workspaceFolder}"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "WAPT: -i build upload",
+      "type": "python",
+      "request": "launch",
+      "program": "${config:python.wapt-get}",
+      "args": [
+        "-i",
+        "build-upload",
+        "${workspaceFolder}"
+      ],
+      "console": "integratedTerminal",
+      "linux": {
+        "sudo": true
+      },
+      "osx": {
+        "sudo": true
+      }
+    },
+    {
+      "name": "WAPT: uninstall",
+      "type": "python",
+      "request": "launch",
+      "program": "${config:python.wapt-get}",
+      "args": [
+        "uninstall",
+        "${workspaceFolder}"
+      ],
+      "console": "integratedTerminal",
+      "linux": {
+        "sudo": true
+      },
+      "osx": {
+        "sudo": true
+      }
+    },
+    {
+      "name": "WAPT: audit",
+      "type": "python",
+      "request": "launch",
+      "program": "${config:python.wapt-get}",
+      "args": [
+        "audit",
+        "-f",
+        "${workspaceFolder}"
+      ],
+      "console": "integratedTerminal",
+      "linux": {
+        "sudo": true
+      },
+      "osx": {
+        "sudo": true
+      }
+    },
+    {
+      "name": "WAPT: update-package-sources",
+      "type": "python",
+      "request": "launch",
+      "program": "${config:python.wapt-get}",
+      "args": [
+        "update-package-sources",
+        "${workspaceFolder}"
+      ],
+      "console": "integratedTerminal",
+      "linux": {
+        "sudo": true
+      },
+      "osx": {
+        "sudo": true
+      }
+    },
+    {
+      "name": "WAPT: upgrade",
+      "type": "python",
+      "request": "launch",
+      "program": "${config:python.wapt-get}",
+      "args": [
+        "upgrade",
+        "-f",
+        "${workspaceFolder}"
+      ],
+      "console": "integratedTerminal",
+      "linux": {
+        "sudo": true
+      },
+      "osx": {
+        "sudo": true
+      }
+    }
+  ]
+}
