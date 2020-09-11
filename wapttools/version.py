@@ -6,12 +6,12 @@ import os
 from .config import loadControl, loadVersionCheck
 
 chat_message = """
-New version of *{package}* have beed detected.
+New version of *{package}* have beed released 🎉 🎉 🎉 🎉
 
-Control version: {old_version}
- Latest version: *{new_version}*
+Current version: {old_version}
+Latest version: *{new_version}*
 
-Jump to {homepage}
+📡 {homepage} 📡
 """
 
 
